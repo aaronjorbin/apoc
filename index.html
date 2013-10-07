@@ -1,0 +1,82 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="scripts/style.css">
+        <script src="scripts/vendor/f7f27360.modernizr.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h1>Welcome to Apoc</h1>
+                    <h2>Generate a Matrix of colors and check the compatability between them</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                   <form class="form-horizontal" id="newColor">
+                      <div class="control-group">
+                        <label class="control-label" for="inputcolor">hexcode</label>
+                        <div class="controls">
+                          <input type="text" id="inputcolor" placeholder="color">
+                        </div>
+                      </div>
+                    </form> 
+                </div>
+            </div>
+        </div>
+        <div class="container" id="apoc">
+        </div>
+
+        <script type="text/tempalte" id="rowTemplate">
+            <tr> 
+                <td> <%= thiscolor %> </td>
+                <% _.each(othercolors, function(color) { %> 
+
+                    <td title='<%= color.color %> on <%= thiscolor %>' style='font-size:1.5em;margin-right:15px;color:<%= text %>;background-color:<%= thiscolor %>;'>
+                    <%= console.log( thiscolor ) %>
+                    <%= console.log( othercolors ) %>
+                    <%= color.grade %>
+                    </td>
+                <% }) %>
+            </tr>
+
+        </script>
+        <script type="text/tempalte" id="tabaleheadTemplate">
+            <thead> 
+                <tr>
+                <th></th>
+                <% _.each(colors, function(color) { %> 
+                    <th>
+                    <%= color %>
+                    </th>
+                <% }) %>
+                <tr>
+            </thead>
+
+        </script>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+
+        <script src="scripts/872ad49e.app.js"></script>
+</body>
+</html>
