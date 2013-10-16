@@ -58,7 +58,7 @@
             <thead> 
                 <tr>
                 <th></th>
-                <% _.each(colors, function(color) { %> 
+                <% _.each( _.compact( colors ), function(color) { %> 
                     <th>
                     <%= color %>
                     </th>

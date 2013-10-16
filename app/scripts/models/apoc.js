@@ -12,8 +12,12 @@ var app = app || {}
         },
         initialize: function(){
             this.set('rgba', parseCSSColor(this.get('inputColor') ) )
-            this.set('lumiance', this.lumiance() )
-            this.set('textColor', this.fontColor() )
+            if ( this.get('rgba') === null){ //Check to See if we are actually color
+                this.clear()
+            } else {
+                this.set('lumiance', this.lumiance() )
+                this.set('textColor', this.fontColor() )
+            }
         },
         fontColor: function(){
             return (this.get('lumiance') < 0.5 ) ? '#fff' : '#000'
@@ -31,5 +35,8 @@ var app = app || {}
                     Math.pow( ((v+0.055)/1.055), 2.4 )
             })
             return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722
+        },
+        suicide: function() {
         }
+
 })

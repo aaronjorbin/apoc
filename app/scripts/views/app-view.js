@@ -22,9 +22,13 @@ var ApocAppView = Backbone.View.extend({
                 , contrasts = []
                 , al
                 , grade
+            if (! l)
+                return
 
             Apocs.each( function(a,b,c){
                 al = a.get('lumiance')
+                if (! al)
+                    return
                 contrasts = []
                 contrasts.push( (al + 0.05) / (l + 0.05) )
                 contrasts.push( (l + 0.05) / (al + 0.05) )
