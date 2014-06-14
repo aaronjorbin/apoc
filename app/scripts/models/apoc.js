@@ -11,7 +11,12 @@ var app = app || {}
             }
         },
         initialize: function(){
-            this.set('rgba', parseCSSColor(this.get('inputColor') ) )
+            var color = this.get('inputColor');
+            if (color.length == 3 || color.length == 6){
+                color = '#' + color;
+            }
+            this.set('inputColor', color);
+            this.set('rgba', parseCSSColor( color ) )
             if ( this.get('rgba') === null){ //Check to See if we are actually color
                 this.clear()
             } else {
