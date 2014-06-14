@@ -33,7 +33,7 @@
                           <input type="text" id="inputcolor" placeholder="color">
                         </div>
                       </div>
-                    </form> 
+                    </form>
                 </div>
             </div>
         </div>
@@ -41,9 +41,9 @@
         </div>
 
         <script type="text/tempalte" id="rowTemplate">
-            <tr> 
+            <tr>
                 <td> <%= thiscolor %> </td>
-                <% _.each(othercolors, function(color) { %> 
+                <% _.each(othercolors, function(color) { %>
 
                     <td title='<%= color.color %> on <%= thiscolor %>' style='font-size:1.5em;margin-right:15px;color:<%= text %>;background-color:<%= thiscolor %>;'>
                     <%= console.log( thiscolor ) %>
@@ -55,10 +55,10 @@
 
         </script>
         <script type="text/tempalte" id="tabaleheadTemplate">
-            <thead> 
+            <thead>
                 <tr>
                 <th></th>
-                <% _.each( _.compact( colors ), function(color) { %> 
+                <% _.each( _.compact( colors ), function(color) { %>
                     <th>
                     <%= color %>
                     </th>
@@ -91,5 +91,32 @@
         <script src="scripts/views/app-view.js"></script>
         <script src="scripts/views/apoc.js"></script>
         <!-- endbuild -->
+
+        <!--
+              ||||||\\
+           -\\\\|||///
+           \\\       ""
+           \\        oo\
+           \\  c        >
+           \\          /
+            -\      \/-
+              ------
+             --|>o<|-
+            /   \  / \-\\
+           ||    \/   | \\
+           ||    .    |  \\
+           ||    .    |  -XX
+           ||    .    |
+           ||    .    |
+            \         |
+             --+-----+-
+               |     |
+               |     |
+               |     |
+               |     |
+               |     |
+               |_    |_
+
+        -->
 </body>
 </html>
