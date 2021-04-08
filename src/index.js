@@ -11,7 +11,17 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+function sendToAnalytics({ id, name, value }) {
+	if ( typeof( window.ga ) !== 'undefined' ) {
+	  window.ga('send', 'event', {
+		eventCategory: 'Web Vitals',
+		eventAction: name,
+		eventValue: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
+		eventLabel: id, // id unique to current page load
+		nonInteraction: true, // avoids affecting bounce rate
+	  });
+	}
+}
+
+reportWebVitals(sendToAnalytics);
