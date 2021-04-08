@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import Apoc from './Apoc.js';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+	  	<h1>Apoc - A matrix of Color Contrasts</h1>
       </header>
+	  <Apoc />
+	  <footer>
+		<p>Built with ❤️  by <a href="https://aaron.jorb.in">Aaron Jorbin</a></p>
+	  </footer>
     </div>
   );
 }
