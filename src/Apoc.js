@@ -12,6 +12,10 @@ const Apoc = () => {
 	setValue( event.target.value );
   }
 
+  const remove = ( c ) => {
+	setColors( colors.filter( t => t !== c ) );
+  }
+
   const handleSubmit = (event) =>  {
 	let c = event.target[0].value;
 	if ( c.length === 3 || c.length === 6 ){
@@ -44,7 +48,11 @@ const Apoc = () => {
 			<tr>
 				<th></th>
 				{colors.map( c => {
-					return <th key={ "th +" +  c} >{c} <span style={{  height: '10px' , width: '10px', border:'1px solid black', display: 'inline-block',  background: c  }}  >&nbsp;</span> </th>
+					return <th key={ "th +" +  c} > 
+						{c} 
+						<span style={{  height: '10px' , width: '10px', border:'1px solid black', display: 'inline-block',  background: c  }}  >&nbsp;</span>
+						<button onClick={ e => remove( c ) }> X </button>  
+					</th>
 				})}
 			</tr>
 		</thead>
