@@ -24,12 +24,39 @@ const grade = ( score ) => {
 	if ( score < 3 ){
 		return 'fail';
 	} else if ( score < 4.5 ) {
-		return 'aa-large'
+		return 'AA-Large'
 	} else if ( score < 7 ){
-		return 'aa';
+		return 'AA';
 	} else { 
-		return 'aaa';
+		return 'AAA';
 	}
 }
 
-export { luminance, score, grade }
+const borw = ( c ) => {
+	const black = luminance( [0,0,0] );	
+	const white = luminance( [256,25,256] );	
+
+	const base = 'px-2 text-center '
+
+	if ( score( black, c ) >= score( white, c ) ){
+		return base + 'bg-black  ';
+	} else {
+		return base + 'bg-white ';
+	}
+}
+
+const borwText = ( c ) => {
+
+	const black = luminance( [0,0,0] );	
+	const white = luminance( [256,25,256] );	
+
+	const base = 'px-2 text-center '
+
+	if ( score( black, c ) >= score( white, c ) ){
+		return base + 'text-black  ';
+	} else {
+		return base + 'text-white ';
+	}
+}
+
+export { luminance, score, grade, borw, borwText }

@@ -1,13 +1,78 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-gray-100 p-4;
+font-family: 'Verlag Cond A', 'Verlag Cond B';
+font-weight: 300;
+font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a{
+	@apply text-red underline
 }
+a:hover,a:focus{
+	@apply no-underline
+}
+
+.col-gap-0{
+	 column-gap: 0;
+}
+
+.btn{
+	@apply bg-red font-bold py-2 px-4 rounded text-white mx-auto text-center block
+}
+.btn:hover,
+.btn:focus{
+	@apply bg-blue-900
+}
+
+.blogpost h2{
+	@apply text-2xl font-bold
+}
+
+.blogpost h3{
+	@apply text-xl
+}
+.blogpost strong{
+	@apply font-bold
+}
+.blogpost em{
+	@apply italic
+}
+
+.blogpost .wp-block-quote{
+	@apply ml-2 border-double border-red border-l-2 pl-2
+}
+
+.blogpost .wp-block-quote cite{
+	@apply mt-4 pb-4 block
+}
+
+.blogpost p {
+	@apply text-lg
+}
+
+.blogpost li {
+	@apply text-lg
+}
+
+.wp-block-image img {
+	max-width: 500px;
+	width: 100%;
+}
+.wp-block-image {
+	margin: 0;
+}
+
+.list-of-posts {
+	@apply max-w-sm mx-auto
+}
+
+.rainbow{
+        background-image: linear-gradient(to left, violet, indigo, green, blue, indigo, orange, #900);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        color: transparent;
+}
+
+@tailwind components;
+@tailwind utilities;
